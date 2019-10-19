@@ -1,134 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src ="function.js"></script>
-    <link rel="stylesheet" href ="assets/css/custom.css">
+    <script src="assets/js/crystal.js"></script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-        <div class="container-fluid">
-               
-    <h1>Crystal Collector</h1>
-    <p>You will be given a ramdom number at the start of the game</p>
-    <p>There are 4 crystals below. By clicking on a crystal you will add a specific
-        amount of points to your score
-    </p>
-    <p>your goal is to match the random number</p>
-    <div id="numberRandom">Random Number: </div>
-    <div id="wins">WINS: </div> 
-    <div id ="losses">LOSSES: </div>
-    <div id ="gem1"><img src="./assets/img/gem (1).png" width="50" height="50"></div>
-    <div id = "gem2"><img src = "./assets/img/gem (2).png" width="50" height="50"></div>
-    <div id = "gem3"><img src = "./assets/img/gem (3).png" width="50" height="50"></div>
-    <div id = "gem4"><img src ="./assets/img/gem.png" width="50" height="50"></div>
-    <div id = "totalScore">Your Current Score is :</div>
-    <div id = "currentTotal"> </div>
-    ...
-</div>  
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4" style="text-align:center;color:#ff8c00">Crystal Collector</h1>
+            </div>
+        </div>
+
+        <p>You will be given a ramdom number at the start of the game</p>
+        <p>There are 4 crystals below. By clicking on a crystal you will add a specific
+            amount of points to your score
+        </p>
+        <p>your goal is to match the random number</p>
+        <div id="numberRandom">Random Number: </div>
+        <div id="wins">WINS: </div>
+        <div id="losses">LOSSES: </div>
+        <div>
+        <img src="./assets/img/gem (1).png" id="gem1" class="rounded float-left" alt="gem1" width="100" height= "100">
+        <img src="./assets/img/gem (2).png" id="gem2" class="rounded float-left" alt="gem2" width="100" height= "100">
+        <img src="./assets/img/gem (3).png" id="gem3" class="rounded float-left" alt="gem3" width="100" height= "100">
+        <img src="./assets/img/gem.png" id="gem4" class="rounded float-left" alt="gem4" width="100" height= "100">
+    </div>
+        <br>
+        <br>
+        <br>
+        
+        <div id="totalScore">Your Current Score is :</div>
+        <div id="currentTotal"> </div>
+        
+    </div>
 </body>
 <script>
-window.onload = function() {
-
-//  Click events are done for us:
-$("#gem1").click(gem1Logic);
-$("#gem2").click(gem2Logic);
-$("#gem3").click(gem3Logic);
-$("#gem4").click(gem4Logic);
-
-};
-// generate the random number between 19 -120
-//generate and assign random number for each of the crystals each crystal can have a value btween 1-12
-var numberRandom;
-var gem1;
-var gem2;
-var gem3;
-var gem4;
-var totalScore=0;
-var currentTotal=0;
-var wins =0;
-var losses = 0;
-
-$("#wins").append(wins);
-$("#losses").append(losses);
-gameRestart();
-function gameRestart(){
-generateRandom();
-currentTotal =0;
-$("#numberRandom").text(numberRandom)
-$("#currentTotal").text(currentTotal);
-document.getElementById("gem1").value = generateGem(gem1);
-document.getElementById("gem2").value = generateGem(gem2);
-document.getElementById("gem3").value = generateGem(gem3);
-document.getElementById("gem4").value = generateGem(gem4);
-}
-
-
-//function to generate Random Number
-function generateRandom(){
-var min = Math.ceil(19);
-var max = Math.ceil(120);
-numberRandom = Math.floor(Math.random()*(max-min+1))+ min
-}
-//function to compare random number and currentTotal
-function compare(){
-    if (currentTotal === numberRandom){
-        wins++
-        $("#wins").text("WINS: "+wins);
-        gameRestart();
-    }else if (currentTotal>numberRandom){
-        losses++
-        $("#losses").text("LOSSES: " +losses);
-        gameRestart();
-    }  
-    
-}
-
-
-//Function to generate random number for gems
- function generateGem(gemName){
-    var min = Math.ceil(1);
-    var max = Math.ceil(12);
-     var gemName = Math.floor(Math.random()*(max-min+1))+ min;
-     console.log(gemName)
-     return gemName;
- }
-
-//assign the generated value to each of the gems
-//capture value on click
-
-
-//On click get the value and add to total
-function gem1Logic(){
-    var num1 = document.getElementById("gem1").value;
-    currentTotal = currentTotal+num1;
-    $("#currentTotal").html(currentTotal)
-    compare();
-}
-    
-function gem2Logic(){
-var num2 = document.getElementById("gem2").value;
-currentTotal = currentTotal+num2;
-$("#currentTotal").html(currentTotal);
-compare()
-}
-
-function gem3Logic(){
-var num3 = document.getElementById("gem3").value;
-currentTotal = currentTotal+num3;
-$("#currentTotal").html(currentTotal);
-compare();
-}
-
-function gem4Logic(){
-var num4 = document.getElementById("gem4").value;
-currentTotal = currentTotal+num4;
-$("#currentTotal").html(currentTotal);
-compare();
-}
-
+    crystal();
 </script>
+
 </html>
