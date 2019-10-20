@@ -1,5 +1,5 @@
 # unit-4-game 
-- Crystal Collector (https://dimz13.github.io/unit-4-game/)
+- [Crystal Collector](https://dimz13.github.io/unit-4-game/)
 
 # README for unit-4-game - Crystal Collector
 
