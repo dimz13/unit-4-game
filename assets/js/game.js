@@ -23,6 +23,7 @@ function crystal(){
     $("#wins").append(wins);
     $("#losses").append(losses);
     gameRestart();
+    //restart game with new random number and new gem values
     function gameRestart() {
         generateRandom();
         currentTotal = 0;
@@ -46,10 +47,12 @@ function crystal(){
         if (currentTotal === numberRandom) {
             wins++
             $("#wins").text("WINS: " + wins);
+            alert("You Rock")
             gameRestart();
         } else if (currentTotal > numberRandom) {
             losses++
             $("#losses").text("LOSSES: " + losses);
+            alert("Try again")
             gameRestart();
         }
 

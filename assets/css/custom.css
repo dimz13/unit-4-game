@@ -1,3 +1,23 @@
 body{
-    background-image: url("../img/art-background-blue-370799.jpg")
+    background: url("../img/antique-backdrop-background-164005.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
+.jumbotron {
+    background-image: url("../img/background-black-and-white-black-and-white-978484.jpg");
+    background-size: cover;
+  }
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+#textinst{
+    color:rgb(26, 39, 224);
+    font-family: 'Franklin Gothic Medium';
+    font-size: 25px;
+}
+
+

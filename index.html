@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="assets/js/crystal.js"></script>
+    <script src="assets/js/game.js"></script>
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,28 +20,67 @@
                 <h1 class="display-4" style="text-align:center;color:#ff8c00">Crystal Collector</h1>
             </div>
         </div>
+        <div id="textinst">
+            <p>You will be displayed a random number at the start of the game.</p>
+            <p>To win your total score has to match the Random Number displayed</p>
+            <p>Each of the crystals below is hiding a specific value and changes for every game.
+                Clicking on the crystals below will add to your score</p>
+            <p><b>Click wisely!!!</b></p>
 
-        <p>You will be given a ramdom number at the start of the game</p>
-        <p>There are 4 crystals below. By clicking on a crystal you will add a specific
-            amount of points to your score
-        </p>
-        <p>your goal is to match the random number</p>
-        <div id="numberRandom">Random Number: </div>
-        <div id="wins">WINS: </div>
-        <div id="losses">LOSSES: </div>
-        <div>
-        <img src="./assets/img/gem (1).png" id="gem1" class="rounded float-left" alt="gem1" width="100" height= "100">
-        <img src="./assets/img/gem (2).png" id="gem2" class="rounded float-left" alt="gem2" width="100" height= "100">
-        <img src="./assets/img/gem (3).png" id="gem3" class="rounded float-left" alt="gem3" width="100" height= "100">
-        <img src="./assets/img/gem.png" id="gem4" class="rounded float-left" alt="gem4" width="100" height= "100">
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card ">
+                    <div class="card-header text-center bg-info">
+                        Random Number to Match
+                    </div>
+                    <div class="card-body text-center">
+                        <blockquote class="blockquote mb-0">
+                            <p id="numberRandom"></p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header text-center bg-info">
+                        Your Total Score
+                    </div>
+                    <div class="card-body text-center">
+                        <blockquote class="blockquote mb-0">
+                            <p id="currentTotal"></p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li id="wins" class="list-group-item bg-success">WINS: </li>
+                        <li id="losses" class="list-group-item bg-warning">LOSSES: </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-        <br>
-        <br>
-        <br>
-        
-        <div id="totalScore">Your Current Score is :</div>
-        <div id="currentTotal"> </div>
-        
+    <br>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <img src="./assets/img/gem (1).png" id="gem1" class="rounded float-left" alt="gem1" width="100"
+                height="100">
+            <img src="./assets/img/gem (2).png" id="gem2" class="rounded float-left" alt="gem2" width="100"
+                height="100">
+            <img src="./assets/img/gem (3).png" id="gem3" class="rounded float-left" alt="gem3" width="100"
+                height="100">
+            <img src="./assets/img/gem.png" id="gem4" class="rounded float-left" alt="gem4" width="100" height="100">
+        </div>
+
+    </div>
+    </div>
     </div>
 </body>
 <script>
